@@ -1,0 +1,77 @@
+version: '3.7'
+services:
+  es:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.7
+    environment: 
+      - node.name=single
+      - cluster.name=standalone
+      - discovery.type=single-node
+    volumes:
+      - data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - monitoring_network
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.role == manager]
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.7
+    ports:
+      - 5601:5601
+    environment: 
+      - ELASTICSEARCH_HOSTS=["http://211.183.3.100:9200"]
+    depends_on:
+      - es
+    networks:
+      - monitoring_network
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.role == manager]
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
+
+  metricbeat:
+    image: docker.elastic.co/beats/metricbeat:${ELASTIC_VERSION:-7.17.7}
+    hostname: "{{.Node.Hostname}}-metricbeat"
+    user: root
+    networks:
+      - elastic
+    configs:
+      - source: mb_config
+        target: /usr/share/metricbeat/metricbeat.yml
+    volumes:
+      - /proc:/hostfs/proc:ro
+      - /sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro
+      - /:/hostfs:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+      - metricbeat:/usr/share/metricbeat/data
+    environment:
+      - ELASTICSEARCH_HOST=211.183.3.100
+      - KIBANA_HOST=211.183.3.100
+      - ELASTICSEARCH_USERNAME=${ELASTICSEARCH_USERNAME:-elastic}
+      - ELASTICSEARCH_PASSWORD=${ELASTICSEARCH_PASSWORD:-changeme}
+    # disable strict permission checks
+    command: ["--strict.perms=false", "-system.hostfs=/hostfs"]
+    deploy:
+      mode: global       
+
+volumes:
+  data:
+    driver: local
+  metricbeat: 
+
+configs: 
+  mb_config: 
+    file: $PWD/elk/beats/metricbeat/config/metricbeat.yml
+
+networks:
+  monitoring_network:
+          external: true
