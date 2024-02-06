@@ -42,8 +42,10 @@ services:
     image: docker.elastic.co/beats/metricbeat:${ELASTIC_VERSION:-7.17.7}
     hostname: "{{.Node.Hostname}}-metricbeat"
     user: root
+    depends_on:
+      - kibana
     networks:
-      - elastic
+      - monitoring_network
     configs:
       - source: mb_config
         target: /usr/share/metricbeat/metricbeat.yml
@@ -52,7 +54,7 @@ services:
       - /sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro
       - /:/hostfs:ro
       - /var/run/docker.sock:/var/run/docker.sock
-      - metricbeat:/usr/share/metricbeat/data
+      - metricbeat:data
     environment:
       - ELASTICSEARCH_HOST=211.183.3.100
       - KIBANA_HOST=211.183.3.100
