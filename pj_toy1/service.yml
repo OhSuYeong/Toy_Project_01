@@ -14,7 +14,7 @@ services:
       SERVICE_PORTS: 80
     networks:
       - service_network
-    volume: 
+    volumes: 
       - /home/user1/project_kakao/pj_toy1/html:/usr/share/nginx/html
 
   proxy:

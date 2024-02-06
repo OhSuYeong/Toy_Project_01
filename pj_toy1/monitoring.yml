@@ -54,7 +54,7 @@ services:
       - /sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro
       - /:/hostfs:ro
       - /var/run/docker.sock:/var/run/docker.sock
-      - metricbeat:data
+      - metricbeat:/usr/share/metricbeat/data
     environment:
       - ELASTICSEARCH_HOST=211.183.3.100
       - KIBANA_HOST=211.183.3.100
@@ -72,7 +72,7 @@ volumes:
 
 configs: 
   mb_config: 
-    file: $PWD/elk/beats/metricbeat/config/metricbeat.yml
+    file: $PWD/metricbeat.yml
 
 networks:
   monitoring_network:
