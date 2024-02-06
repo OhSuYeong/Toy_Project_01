@@ -15,7 +15,7 @@ services:
     networks:
       - service_network
     volume: 
-      - /home/user1/project_kakao/pj_toy:/usr/share/nginx/html
+      - /home/user1/project_kakao/pj_toy1/html:/usr/share/nginx/html
 
   proxy:
     image: dockercloud/haproxy
