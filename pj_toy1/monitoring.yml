@@ -25,7 +25,7 @@ services:
     ports:
       - 5601:5601
     environment: 
-      - ELASTICSEARCH_HOSTS=["http://211.183.3.100:9200"]
+      - ELASTICSEARCH_HOSTS=["http://es:9200"]
     depends_on:
       - es
     networks:
@@ -52,14 +52,19 @@ services:
     volumes:
       - metricbeat:/usr/share/metricbeat/data
     environment:
-      - ELASTICSEARCH_HOST=211.183.3.100
-      - KIBANA_HOST=211.183.3.100
+      - ELASTICSEARCH_HOST=es
+      - KIBANA_HOST=kibana
       - ELASTICSEARCH_USERNAME=${ELASTICSEARCH_USERNAME:-elastic}
       - ELASTICSEARCH_PASSWORD=${ELASTICSEARCH_PASSWORD:-changeme}
     # disable strict permission checks
-    command: ["--strict.perms=false", "-system.hostfs=/hostfs"]
+    command: ["--strict.perms=false", "-system.hostfs=/hostfs"]  
     deploy:
-      mode: global       
+      mode: global
+      placement:
+        constraints: [node.role != manager]
+      restart_policy:
+        condition: on-failure
+        max_attempts: 3
 
 volumes:
   es_data:
