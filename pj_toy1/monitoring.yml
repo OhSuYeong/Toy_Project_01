@@ -62,7 +62,6 @@ services:
         constraints: [node.role != manager]
       restart_policy:
         condition: on-failure
-        max_attempts: 3
 
 volumes:
   es_data:
