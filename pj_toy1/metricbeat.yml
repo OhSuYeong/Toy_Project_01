@@ -1,7 +1,5 @@
-# https://github.com/elastic/beats/blob/master/metricbeat/metricbeat.reference.yml
 
 #-------------------------------- Autodiscovery -------------------------------
-# Autodiscover allows you to detect changes in the system and spawn new modules as they happen.
 metricbeat.autodiscover:
   providers:
     - type: docker

@@ -7,7 +7,7 @@ services:
       - cluster.name=standalone
       - discovery.type=single-node
     volumes:
-      - data:/usr/share/elasticsearch/data
+      - es_data:/usr/share/elasticsearch/data
     ports:
       - 9200:9200
     networks:
@@ -50,10 +50,6 @@ services:
       - source: mb_config
         target: /usr/share/metricbeat/metricbeat.yml
     volumes:
-      - /proc:/hostfs/proc:ro
-      - /sys/fs/cgroup:/hostfs/sys/fs/cgroup:ro
-      - /:/hostfs:ro
-      - /var/run/docker.sock:/var/run/docker.sock
       - metricbeat:/usr/share/metricbeat/data
     environment:
       - ELASTICSEARCH_HOST=211.183.3.100
@@ -66,9 +62,10 @@ services:
       mode: global       
 
 volumes:
-  data:
+  es_data:
     driver: local
-  metricbeat: 
+  metricbeat:
+    driver: local
 
 configs: 
   mb_config: 
