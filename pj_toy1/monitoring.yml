@@ -39,8 +39,7 @@ services:
         max_attempts: 3
 
   metricbeat:
-    image: docker.elastic.co/beats/metricbeat:${ELASTIC_VERSION:-7.17.7}
-    hostname: "{{.Node.Hostname}}-metricbeat"
+    image: docker.elastic.co/beats/metricbeat:7.17.7
     user: root
     depends_on:
       - kibana
