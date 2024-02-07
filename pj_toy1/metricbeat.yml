@@ -48,7 +48,7 @@ processors:
 
 #========================== Elasticsearch output ===============================
 output.elasticsearch:
-  hosts: ["${ELASTICSEARCH_HOST}:9200"]
+  hosts: ["211.183.3.100:9200"]
   username: ${ELASTICSEARCH_USERNAME}
   password: ${ELASTICSEARCH_PASSWORD}
 
@@ -58,7 +58,7 @@ setup.dashboards:
 
 #============================== Kibana =========================================
 setup.kibana:
-  host: "${KIBANA_HOST}:5601"
+  host: "http://211.183.3.100:5601"
   username: ${ELASTICSEARCH_USERNAME}
   password: ${ELASTICSEARCH_PASSWORD}
 
