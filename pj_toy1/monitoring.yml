@@ -59,7 +59,8 @@ services:
     # disable strict permission checks
     command: ["--strict.perms=false", "-system.hostfs=/hostfs"]  
     deploy:
-      mode: global
+      # mode: global
+      replicas: 2
       placement:
         constraints: [node.role != manager]
       restart_policy:
