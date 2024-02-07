@@ -47,8 +47,8 @@ processors:
     netinfo.enabled: true
 
 #========================== Elasticsearch output ===============================
-output.elasticsearch:
-  hosts: ["211.183.3.100:9200"]
+output.elasticsearch: 
+  hosts: ["${ELASTICSEARCH_HOST}:9200"]
   username: ${ELASTICSEARCH_USERNAME}
   password: ${ELASTICSEARCH_PASSWORD}
 
@@ -57,8 +57,8 @@ setup.dashboards:
   enabled: true
 
 #============================== Kibana =========================================
-setup.kibana:
-  host: "http://211.183.3.100:5601"
+setup.kibana: 
+  host: "${KIBANA_HOST}:5601"
   username: ${ELASTICSEARCH_USERNAME}
   password: ${ELASTICSEARCH_PASSWORD}
 
