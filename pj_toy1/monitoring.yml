@@ -56,8 +56,6 @@ services:
       - KIBANA_HOST=kibana
       - ELASTICSEARCH_USERNAME=${ELASTICSEARCH_USERNAME:-elastic}
       - ELASTICSEARCH_PASSWORD=${ELASTICSEARCH_PASSWORD:-changeme}
-    # disable strict permission checks
-    command: ["--strict.perms=false", "-system.hostfs=/hostfs"]  
     deploy:
       mode: global
       placement:
@@ -74,7 +72,7 @@ volumes:
 
 configs: 
   mb_config: 
-    file: $PWD/metricbeat.yml
+    file: /home/user1/project_kakao/pj_toy1/metricbeat.yml
 
 networks:
   monitoring_network:
