@@ -1,5 +1,5 @@
 # project_kakao
-Building cloud infrastructure ...
+
 ![Design_01](https://github.com/OhSuYeong/project_kakao/assets/101083171/cca4189e-ad6d-42c1-9d3c-f186441b35f3)
 ![2](https://github.com/OhSuYeong/project_kakao/assets/101083171/3de71fef-7176-418c-8413-a01938c8b534)
 ![3](https://github.com/OhSuYeong/project_kakao/assets/101083171/b390e148-3232-43c6-916e-ccdda0b8dab5)
