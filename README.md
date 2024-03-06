@@ -1,3 +1,17 @@
 # project_kakao
 Building cloud infrastructure ...
 ![Design_01](https://github.com/OhSuYeong/project_kakao/assets/101083171/cca4189e-ad6d-42c1-9d3c-f186441b35f3)
+![2](https://github.com/OhSuYeong/project_kakao/assets/101083171/3de71fef-7176-418c-8413-a01938c8b534)
+![3](https://github.com/OhSuYeong/project_kakao/assets/101083171/b390e148-3232-43c6-916e-ccdda0b8dab5)
+![4](https://github.com/OhSuYeong/project_kakao/assets/101083171/5ef7c975-fcdc-45ff-96bd-ca56639aea57)
+![5](https://github.com/OhSuYeong/project_kakao/assets/101083171/34d4c88a-e604-40f5-a49e-78f8cfc89230)
+![6](https://github.com/OhSuYeong/project_kakao/assets/101083171/a43e8db3-801c-4968-a7fb-dbcc99f2b32a)
+![7](https://github.com/OhSuYeong/project_kakao/assets/101083171/3aea60b9-b37b-4f48-8f23-e1f4c629acdb)
+![8](https://github.com/OhSuYeong/project_kakao/assets/101083171/618cc424-1f23-4a77-a953-e959a66bc48b)
+![9](https://github.com/OhSuYeong/project_kakao/assets/101083171/ec1649cf-5e28-4ea1-ac46-ba26a4f9c099)
+![10](https://github.com/OhSuYeong/project_kakao/assets/101083171/a960865f-b701-4294-a234-2be8c537a6a9)
+![11](https://github.com/OhSuYeong/project_kakao/assets/101083171/b129e373-2cbb-4aa1-b3d6-b0915be639bb)
+![12](https://github.com/OhSuYeong/project_kakao/assets/101083171/4a4d4a5e-fea8-47e3-8baa-0ae3fefcdcfc)
+![13](https://github.com/OhSuYeong/project_kakao/assets/101083171/72c98cec-4e02-40c4-91e0-a56ad9ca06be)
+![14](https://github.com/OhSuYeong/project_kakao/assets/101083171/ff92deb4-a143-4803-8b9d-e209535041f2)
+![15](https://github.com/OhSuYeong/project_kakao/assets/101083171/9e854204-c342-40eb-8dc9-a0290c3ef73d)
