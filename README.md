@@ -1,2 +1,3 @@
 # project_kakao
 Building cloud infrastructure ...
+![Design_01](https://github.com/OhSuYeong/project_kakao/assets/101083171/cca4189e-ad6d-42c1-9d3c-f186441b35f3)
